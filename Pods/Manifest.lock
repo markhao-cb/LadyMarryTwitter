@@ -1,15 +1,18 @@
 PODS:
+  - Canvas (0.1.2)
   - JCAlertView (1.1.5)
   - STTwitter (0.2.4)
 
 DEPENDENCIES:
+  - Canvas
   - JCAlertView
   - STTwitter
 
 SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
   STTwitter: a82de278afbd4191d0a07f4f3ffd8f1fb8404da0
 
-PODFILE CHECKSUM: cbb2620da37fa048126fce00b5d9483637c3f43b
+PODFILE CHECKSUM: c166478edecbff828ece7042920786b80deafa8b
 
 COCOAPODS: 1.0.0

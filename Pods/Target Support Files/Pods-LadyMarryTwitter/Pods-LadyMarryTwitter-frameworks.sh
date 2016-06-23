@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Canvas/Canvas.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JCAlertView/JCAlertView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Canvas/Canvas.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JCAlertView/JCAlertView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STTwitter/STTwitter.framework"
 fi

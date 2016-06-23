@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import Canvas
 
 class LMTLoginViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet weak var animationView: CSAnimationView!
+    
+    //MARK: -Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupButton()
+    }
     
     
     //MARK: - Action
@@ -26,12 +35,16 @@ class LMTLoginViewController: UIViewController {
             performUIUpdatesOnMain({
                 self.setUIEnabled(true)
                 if success {
-                    
+                    let tabbarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+                    self.presentViewController(tabbarController, animated: true, completion: nil)
                 } else {
                     self.displayError(errorString)
                 }
             })
         }
+    }
+    @IBAction func btnTouchDown(sender: UIButton) {
+        animationView.startCanvasAnimation()
     }
 }
 
@@ -54,5 +67,9 @@ extension LMTLoginViewController {
         if let errorString = errorString {
             showAlertViewWith("Oops", error: errorString, type: .AlertViewWithOneButton, firstButtonTitle: "OK", firstButtonHandler: nil, secondButtonTitle: nil, secondButtonHandler: nil)
         }
+    }
+    
+    private func setupButton() {
+        loginButton.layer.cornerRadius = loginButton.frame.size.width / 2
     }
 }

@@ -51,26 +51,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-6e-zgj">
-                                <rect key="frame" x="235" y="285" width="131" height="30"/>
-                                <state key="normal" title="Sign in with Twitter"/>
-                                <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPt-VD-qCb"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-pD-aXu" customClass="CSAnimationView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-6e-zgj">
+                                        <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5tu-fX-4bq"/>
+                                            <constraint firstAttribute="width" constant="100" id="vri-d4-Whi"/>
+                                        </constraints>
+                                        <state key="normal" image="twitter_logo"/>
+                                        <connections>
+                                            <action selector="btnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="p6i-11-ckt"/>
+                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPt-VD-qCb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oab-6e-zgj" firstAttribute="centerY" secondItem="bM2-pD-aXu" secondAttribute="centerY" id="COE-fm-zJJ"/>
+                                    <constraint firstItem="oab-6e-zgj" firstAttribute="centerX" secondItem="bM2-pD-aXu" secondAttribute="centerX" id="dBs-zd-spG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oab-6e-zgj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cFJ-Kz-Zpy"/>
-                            <constraint firstItem="oab-6e-zgj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="coN-7m-ViJ"/>
+                            <constraint firstItem="bM2-pD-aXu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HID-Sd-Uya"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bM2-pD-aXu" secondAttribute="bottom" id="W8F-fC-OuH"/>
+                            <constraint firstItem="bM2-pD-aXu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="YPW-RT-sRU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bM2-pD-aXu" secondAttribute="trailing" constant="-20" id="gim-iY-VbP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="bM2-pD-aXu" id="0km-mp-vRH"/>
                         <outlet property="loginButton" destination="oab-6e-zgj" id="4yE-Je-XAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="625" y="463"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="yv3-EI-pjQ">
+            <objects>
+                <viewController id="Jpx-tc-uAg" customClass="LMTHomeViewController" customModule="LadyMarryTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Zx-rC-MvR"/>
+                        <viewControllerLayoutGuide type="bottom" id="fyO-Ux-CfC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iRs-60-Zqd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lqy-PA-jXQ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="ikv-im-7mc">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikv-im-7mc" id="oko-ME-lrc">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lqy-PA-jXQ" firstAttribute="leading" secondItem="iRs-60-Zqd" secondAttribute="leadingMargin" constant="-20" id="4lu-kQ-23h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lqy-PA-jXQ" secondAttribute="trailing" constant="-20" id="9sx-xv-ulS"/>
+                            <constraint firstItem="Lqy-PA-jXQ" firstAttribute="top" secondItem="9Zx-rC-MvR" secondAttribute="bottom" id="ANh-1Z-fgW"/>
+                            <constraint firstItem="fyO-Ux-CfC" firstAttribute="top" secondItem="Lqy-PA-jXQ" secondAttribute="bottom" id="QPc-Ot-UhL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5W6-ra-1EO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvh-Z1-Rgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3111" y="78"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aLQ-wo-pTQ">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="rct-AX-jgc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="NwC-lZ-Mgr">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Sel-vL-uLV" kind="relationship" relationship="viewControllers" id="XeI-eH-AoX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97w-aJ-Ga9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="458"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="BEi-lv-ZFY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sel-vL-uLV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uy5-4M-zV0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ekG-AL-JZW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jpx-tc-uAg" kind="relationship" relationship="rootViewController" id="Bkn-LA-iL4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zho-cH-4Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="twitter_logo" width="1687" height="1687"/>
+    </resources>
 </document>

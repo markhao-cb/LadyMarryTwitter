@@ -9,4 +9,5 @@ target 'LadyMarryTwitter' do
   
   pod 'STTwitter'
   pod 'JCAlertView'
+  pod 'Canvas'
 end

@@ -12,15 +12,17 @@ import STTwitter
 class TwitterClient {
     
     // authentication state
-    var accessToken: String? = nil
-    var userID: String? = nil
+    var oauthToken: String? = nil
+    var oauthTokenSecret: String? = nil
     
+    private lazy var sttwitter = Utilities.appDelegate.sttwitter!
     
     static let sharedInstance = TwitterClient()
     private init() {}
     
-    private lazy var sttwitter = STTwitterAPI(OAuthConsumerKey: Constants.ConsumerKey, consumerSecret: Constants.ConsumerSecret)
     
+    
+    //MARK: - OAuth Methods
     func authenticateWithViewController(hostViewController: UIViewController, completionHandlerForAuth: (success: Bool, errorString: String?) -> Void) {
         
         sttwitter.postTokenRequest({ (url, token) in
@@ -29,14 +31,14 @@ class TwitterClient {
                 
                 if success {
                     
-                    self.setOAuthTokenAndVerifier(token!, verifier: verifier!, completionHandlerForSetOauth: { (success, errorString, accessToken, userID) in
+                    self.setOAuthTokenAndVerifier(token!, verifier: verifier!, completionHandlerForSetOauth: { (success, errorString, oauthToken, oauthTokenSecret) in
                         
                         if success {
                             
-                            self.userID = userID!
-                            self.accessToken = accessToken!
-                            Utilities.userDefault.setValue(userID!, forKey: "UserID")
-                            Utilities.userDefault.setValue(accessToken!, forKey: "AccessToken")
+                            self.oauthToken = oauthToken!
+                            self.oauthTokenSecret = oauthTokenSecret!
+                            Utilities.userDefault.setValue(oauthToken!, forKey: "OauthToken")
+                            Utilities.userDefault.setValue(oauthTokenSecret!, forKey: "OauthTokenSecret")
                             
                             completionHandlerForAuth(success: true, errorString: nil)
                             
@@ -71,12 +73,44 @@ class TwitterClient {
         }
     }
     
-    private func setOAuthTokenAndVerifier(token: String, verifier: String, completionHandlerForSetOauth: (success: Bool, errorMessage: String?, accessToken: String?, userID: String?)-> Void) {
+    private func setOAuthTokenAndVerifier(token: String, verifier: String, completionHandlerForSetOauth: (success: Bool, errorMessage: String?, oauthToken: String?, oauthTokenSecret: String?)-> Void) {
         sttwitter.postAccessTokenRequestWithPIN(verifier, successBlock: { (oauthToken, oauthTokenSecret, userID, screenName) in
             
-            completionHandlerForSetOauth(success: true, errorMessage: nil, accessToken: oauthToken, userID: userID)
+            completionHandlerForSetOauth(success: true, errorMessage: nil, oauthToken: oauthToken, oauthTokenSecret: oauthTokenSecret)
             }) { (error) in
-               completionHandlerForSetOauth(success: false, errorMessage: error.localizedDescription, accessToken: nil, userID: nil)
+               completionHandlerForSetOauth(success: false, errorMessage: error.localizedDescription, oauthToken: nil, oauthTokenSecret: nil)
         }
     }
 }
+
+
+//MARK: - Streaming Methods
+
+extension TwitterClient {
+    
+    func getStatusesSample() {
+        let request = sttwitter.postStatusesFilterKeyword("Warriors", tweetBlock: { (statuses) in
+            print(statuses.count)
+            }) { (error) in
+                print(error.localizedDescription)
+        }
+    }
+}
+
+extension TwitterClient {
+    func verifiedCredentials () -> Bool {
+        sttwitter.verifyCredentialsWithUserSuccessBlock({ (userName, userID) in
+            return true
+            }) { (error) in
+                return false
+        }
+        return false
+    }
+}
+
+
+
+
+
+
+

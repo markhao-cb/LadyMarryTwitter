@@ -12,6 +12,16 @@ class LMTHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStreaming()
+        
+    }
+}
+
+//MARK: - Networking Methods
+extension LMTHomeViewController {
+    
+    private func setupStreaming() {
+        TwitterClient.sharedInstance.getStatusesSample()
     }
 }
 
