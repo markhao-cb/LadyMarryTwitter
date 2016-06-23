@@ -1,18 +1,29 @@
 PODS:
   - Canvas (0.1.2)
+  - Fabric (1.6.7)
   - JCAlertView (1.1.5)
   - STTwitter (0.2.4)
+  - TwitterCore (2.2.0):
+    - Fabric
+  - TwitterKit (2.2.0):
+    - TwitterCore (= 2.2.0)
 
 DEPENDENCIES:
   - Canvas
+  - Fabric
   - JCAlertView
   - STTwitter
+  - TwitterCore
+  - TwitterKit
 
 SPEC CHECKSUMS:
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
   STTwitter: a82de278afbd4191d0a07f4f3ffd8f1fb8404da0
+  TwitterCore: 115527630bb2986954adc928b8c895a92bcd57e5
+  TwitterKit: 2c64ec342a6261ae6bab565bad85dcbbfd3888b7
 
-PODFILE CHECKSUM: c166478edecbff828ece7042920786b80deafa8b
+PODFILE CHECKSUM: 4849bf2330851612853648f494ce362b3da3aa30
 
 COCOAPODS: 1.0.0

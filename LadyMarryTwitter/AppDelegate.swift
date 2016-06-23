@@ -8,6 +8,9 @@
 
 import UIKit
 import STTwitter
+import Fabric
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        Fabric.with([Twitter.self])
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if case let oauthToken as String = Utilities.userDefault.valueForKey("OauthToken"), case let oauthSecret as String = Utilities.userDefault.valueForKey("OauthTokenSecret") {

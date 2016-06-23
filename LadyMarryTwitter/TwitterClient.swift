@@ -8,6 +8,7 @@
 
 import Foundation
 import STTwitter
+import TwitterKit
 
 class TwitterClient {
     
@@ -88,23 +89,14 @@ class TwitterClient {
 
 extension TwitterClient {
     
-    func getStatusesSample() {
-        let request = sttwitter.postStatusesFilterKeyword("Warriors", tweetBlock: { (statuses) in
-            print(statuses.count)
-            }) { (error) in
-                print(error.localizedDescription)
+    func postStatusesByKeyword(keyword: String, completionHandlerForPost:(result: TWTRTweet?, erorr: String? ) -> Void) -> STTwitterRequestProtocol {
+        let request = sttwitter.postStatusesFilterKeyword(keyword, tweetBlock: { tweetDic in
+            let tweet = TWTRTweet.init(JSONDictionary: tweetDic)
+            completionHandlerForPost(result: tweet, erorr: nil)
+        }) { (error) in
+            completionHandlerForPost(result: nil, erorr: error.localizedDescription)
         }
-    }
-}
-
-extension TwitterClient {
-    func verifiedCredentials () -> Bool {
-        sttwitter.verifyCredentialsWithUserSuccessBlock({ (userName, userID) in
-            return true
-            }) { (error) in
-                return false
-        }
-        return false
+        return request
     }
 }
 

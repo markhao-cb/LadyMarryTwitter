@@ -166,6 +166,7 @@
 				4DEB10971D1BB81B00BC451C /* Resources */,
 				3FC70D8FAB2ED216CD316503 /* 📦 Embed Pods Frameworks */,
 				9C3844796EC649B8FF749E64 /* 📦 Copy Pods Resources */,
+				4D8AC1B11D1C057800F8E0C5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -237,6 +238,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4D8AC1B11D1C057800F8E0C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" fc3503f5d52e6f34d247645ba5bab0bb9ff3cf1b 856438a7939aee93dae6efb55c1c5cef3f6ad5012c626a035a3d392e56961c80";
 		};
 		9C3844796EC649B8FF749E64 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
