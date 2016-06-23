@@ -42,7 +42,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LMTLoginViewController" customModule="LadyMarryTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LMTLoginViewController" customModule="LadyMarryTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,57 +51,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-pD-aXu" customClass="CSAnimationView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oab-6e-zgj">
-                                        <rect key="frame" x="250" y="250" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="5tu-fX-4bq"/>
-                                            <constraint firstAttribute="width" constant="100" id="vri-d4-Whi"/>
-                                        </constraints>
-                                        <state key="normal" image="twitter_logo"/>
-                                        <connections>
-                                            <action selector="btnTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="p6i-11-ckt"/>
-                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPt-VD-qCb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st3-Gs-82B">
+                                <rect key="frame" x="204" y="509" width="192" height="38"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <state key="normal" title="  Sign in with Twitter  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xDb-YJ-ou6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2O-lb-nHQ">
+                                <rect key="frame" x="221" y="471" width="159" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-lk-E05">
+                                <rect key="frame" x="250" y="62" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstItem="oab-6e-zgj" firstAttribute="centerY" secondItem="bM2-pD-aXu" secondAttribute="centerY" id="COE-fm-zJJ"/>
-                                    <constraint firstItem="oab-6e-zgj" firstAttribute="centerX" secondItem="bM2-pD-aXu" secondAttribute="centerX" id="dBs-zd-spG"/>
+                                    <constraint firstAttribute="height" constant="100" id="1RT-ba-eny"/>
+                                    <constraint firstAttribute="width" constant="100" id="P69-Tv-PBq"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="pop"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bM2-pD-aXu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HID-Sd-Uya"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bM2-pD-aXu" secondAttribute="bottom" id="W8F-fC-OuH"/>
-                            <constraint firstItem="bM2-pD-aXu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="YPW-RT-sRU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bM2-pD-aXu" secondAttribute="trailing" constant="-20" id="gim-iY-VbP"/>
+                            <constraint firstItem="5gw-lk-E05" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B1m-dx-3iU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l2O-lb-nHQ" secondAttribute="bottom" constant="99" id="GwU-gI-5VY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="st3-Gs-82B" secondAttribute="bottom" constant="53" id="RjU-ts-Um0"/>
+                            <constraint firstItem="5gw-lk-E05" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="Sk1-q4-Tai"/>
+                            <constraint firstItem="st3-Gs-82B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wrm-4v-fhe"/>
+                            <constraint firstItem="l2O-lb-nHQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yMO-aE-PGf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationView" destination="bM2-pD-aXu" id="0km-mp-vRH"/>
-                        <outlet property="loginButton" destination="oab-6e-zgj" id="4yE-Je-XAC"/>
+                        <outlet property="backLabel" destination="l2O-lb-nHQ" id="dCU-LO-ekx"/>
+                        <outlet property="loginButton" destination="st3-Gs-82B" id="gL4-fc-9E4"/>
+                        <outlet property="logoImageView" destination="5gw-lk-E05" id="ywz-mh-uKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="625" y="463"/>
         </scene>
-        <!--Tweet Home-->
+        <!--Home View Controller-->
         <scene sceneID="yv3-EI-pjQ">
             <objects>
                 <viewController id="Jpx-tc-uAg" customClass="LMTHomeViewController" customModule="LadyMarryTwitter" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,14 +135,67 @@
                             <constraint firstItem="fyO-Ux-CfC" firstAttribute="top" secondItem="Lqy-PA-jXQ" secondAttribute="bottom" constant="-49" id="QPc-Ot-UhL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweet Home" id="5W6-ra-1EO"/>
+                    <navigationItem key="navigationItem" id="5W6-ra-1EO"/>
                     <connections>
                         <outlet property="tableView" destination="Lqy-PA-jXQ" id="Xef-6e-VcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvh-Z1-Rgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="78"/>
+            <point key="canvasLocation" x="3849" y="78"/>
+        </scene>
+        <!--Topic-->
+        <scene sceneID="bSt-2n-0n3">
+            <objects>
+                <viewController id="3cC-UV-z6Z" customClass="LMTTopicViewController" customModule="LadyMarryTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gL3-kF-o0f"/>
+                        <viewControllerLayoutGuide type="bottom" id="qwv-iw-Kfo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hx2-7s-ITA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aat-U3-IaG">
+                                <rect key="frame" x="239" y="450" width="122" height="36"/>
+                                <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="  Get Tweets!  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jpx-tc-uAg" kind="show" id="N6V-HJ-zsV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Topic" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-bK-YL2">
+                                <rect key="frame" x="20" y="282" width="560" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="sdR-kF-Gn3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3cC-UV-z6Z" id="JeV-ab-Ui8"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PCh-bK-YL2" secondAttribute="trailing" id="6aF-4C-wKL"/>
+                            <constraint firstItem="qwv-iw-Kfo" firstAttribute="top" secondItem="aat-U3-IaG" secondAttribute="bottom" constant="65" id="UCW-yE-gRq"/>
+                            <constraint firstItem="PCh-bK-YL2" firstAttribute="centerY" secondItem="Hx2-7s-ITA" secondAttribute="centerY" id="dfU-RS-ET5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PCh-bK-YL2" secondAttribute="leading" id="e9j-up-ZrW"/>
+                            <constraint firstItem="aat-U3-IaG" firstAttribute="centerX" secondItem="Hx2-7s-ITA" secondAttribute="centerX" id="hYZ-6l-2lI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Topic" id="u06-mW-XxK"/>
+                    <connections>
+                        <outlet property="topicTextField" destination="PCh-bK-YL2" id="wpR-O3-dQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCP-I4-Ipv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3049" y="78"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aLQ-wo-pTQ">
@@ -166,11 +214,11 @@
             </objects>
             <point key="canvasLocation" x="1463" y="458"/>
         </scene>
-        <!--Item-->
+        <!--Tweets-->
         <scene sceneID="BEi-lv-ZFY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sel-vL-uLV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uy5-4M-zV0"/>
+                    <tabBarItem key="tabBarItem" title="Tweets" image="tweets" id="uy5-4M-zV0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ekG-AL-JZW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -178,7 +226,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Jpx-tc-uAg" kind="relationship" relationship="rootViewController" id="Bkn-LA-iL4"/>
+                        <segue destination="3cC-UV-z6Z" kind="relationship" relationship="rootViewController" id="B2z-hV-jIB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zho-cH-4Zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,6 +235,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tweets" width="24" height="24"/>
         <image name="twitter_logo" width="1687" height="1687"/>
     </resources>
 </document>

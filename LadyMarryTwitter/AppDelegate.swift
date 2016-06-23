@@ -23,21 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         Fabric.with([Twitter.self])
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if case let oauthToken as String = Utilities.userDefault.valueForKey("OauthToken"), case let oauthSecret as String = Utilities.userDefault.valueForKey("OauthTokenSecret") {
             sttwitter = STTwitterAPI(OAuthConsumerKey: TwitterClient.Constants.ConsumerKey, consumerSecret: TwitterClient.Constants.ConsumerSecret, oauthToken: oauthToken, oauthTokenSecret: oauthSecret)
         } else {
             sttwitter = STTwitterAPI(OAuthConsumerKey: TwitterClient.Constants.ConsumerKey, consumerSecret: TwitterClient.Constants.ConsumerSecret)
         }
-        
-        sttwitter?.verifyCredentialsWithUserSuccessBlock({ (userName, userID) in
-            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController")
-            }, errorBlock: { (error) in
-                print(error.localizedDescription)
-        })
-        
+
         return true
     }
 

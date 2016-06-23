@@ -12,6 +12,8 @@
 		4D8AC1AC1D1BC29A00F8E0C5 /* LMTAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1AB1D1BC29A00F8E0C5 /* LMTAuthViewController.swift */; };
 		4D8AC1AE1D1BC33C00F8E0C5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1AD1D1BC33C00F8E0C5 /* Utilities.swift */; };
 		4D8AC1B01D1BC99600F8E0C5 /* LMTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1AF1D1BC99600F8E0C5 /* LMTLoginViewController.swift */; };
+		4D8AC1B31D1C6A7A00F8E0C5 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1B21D1C6A7A00F8E0C5 /* ProgressHUD.swift */; };
+		4D8AC1B51D1C7B9A00F8E0C5 /* LMTTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1B41D1C7B9A00F8E0C5 /* LMTTopicViewController.swift */; };
 		4DEB109D1D1BB81B00BC451C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */; };
 		4DEB109F1D1BB81B00BC451C /* LMTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */; };
 		4DEB10A21D1BB81B00BC451C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A01D1BB81B00BC451C /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		4D8AC1AB1D1BC29A00F8E0C5 /* LMTAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTAuthViewController.swift; sourceTree = "<group>"; };
 		4D8AC1AD1D1BC33C00F8E0C5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4D8AC1AF1D1BC99600F8E0C5 /* LMTLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTLoginViewController.swift; sourceTree = "<group>"; };
+		4D8AC1B21D1C6A7A00F8E0C5 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		4D8AC1B41D1C7B9A00F8E0C5 /* LMTTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTTopicViewController.swift; sourceTree = "<group>"; };
 		4DEB10991D1BB81B00BC451C /* LadyMarryTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadyMarryTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTHomeViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			children = (
 				4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */,
 				4D8AC1AF1D1BC99600F8E0C5 /* LMTLoginViewController.swift */,
+				4D8AC1B41D1C7B9A00F8E0C5 /* LMTTopicViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -71,6 +76,7 @@
 		4D8AC1A31D1BBB8F00F8E0C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D8AC1B21D1C6A7A00F8E0C5 /* ProgressHUD.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -291,11 +297,13 @@
 			files = (
 				4D8AC1AE1D1BC33C00F8E0C5 /* Utilities.swift in Sources */,
 				4D8AC1B01D1BC99600F8E0C5 /* LMTLoginViewController.swift in Sources */,
+				4D8AC1B31D1C6A7A00F8E0C5 /* ProgressHUD.swift in Sources */,
 				4DEB109F1D1BB81B00BC451C /* LMTHomeViewController.swift in Sources */,
 				4D8AC1A81D1BBC1A00F8E0C5 /* TwitterClient.swift in Sources */,
 				4D8AC1AA1D1BBD8100F8E0C5 /* TwitterClientConstants.swift in Sources */,
 				4D8AC1AC1D1BC29A00F8E0C5 /* LMTAuthViewController.swift in Sources */,
 				4DEB109D1D1BB81B00BC451C /* AppDelegate.swift in Sources */,
+				4D8AC1B51D1C7B9A00F8E0C5 /* LMTTopicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

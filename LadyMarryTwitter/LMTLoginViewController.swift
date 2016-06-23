@@ -13,15 +13,16 @@ class LMTLoginViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet private weak var loginButton: UIButton!
-    @IBOutlet weak var animationView: CSAnimationView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet private weak var backLabel: UILabel!
     
     //MARK: -Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configUI()
+        configAnimations()
         setupButton()
     }
-    
     
     //MARK: - Action
     @IBAction private func loginPressed(sender: UIButton) {
@@ -35,22 +36,71 @@ class LMTLoginViewController: UIViewController {
             performUIUpdatesOnMain({
                 self.setUIEnabled(true)
                 if success {
-                    let tabbarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-                    self.presentViewController(tabbarController, animated: true, completion: nil)
+                    self.directToHomePage()
                 } else {
                     self.displayError(errorString)
                 }
             })
         }
     }
-    @IBAction func btnTouchDown(sender: UIButton) {
-        animationView.startCanvasAnimation()
+}
+
+//MARK: - Networking Methods
+extension LMTLoginViewController {
+    
+    private func checkSignInStatus() {
+        let progressHUD = ProgressHUD(text: "Loading")
+        progressHUD.show()
+        view.addSubview(progressHUD)
+        
+        let sttwitter = Utilities.appDelegate.sttwitter
+        
+        sttwitter?.verifyCredentialsWithUserSuccessBlock({ (userName, userID) in
+            performUIUpdatesOnMain({
+                progressHUD.hide()
+                self.changeTextForLabel(self.backLabel, text: "Welcome Back, \(userName)!")
+                UIView.animateWithDuration(0.5, animations: {
+                    self.backLabel.alpha = 1
+                    }, completion: { (finished) in
+                        if finished {
+                            delay(3.0, closure: { 
+                                self.directToHomePage()
+                            })
+                        }
+                })
+            })
+            }, errorBlock: { (error) in
+                performUIUpdatesOnMain({
+                    progressHUD.hide()
+                    UIView.animateWithDuration(0.5, animations: {
+                        self.loginButton.alpha = 1
+                    })
+                })
+        })
+        
     }
 }
 
 
 //MARK: - UI Related Methods
 extension LMTLoginViewController {
+    
+    private func configUI() {
+        loginButton.alpha = 0
+        backLabel.alpha = 0
+    }
+    
+    private func configAnimations() {
+        var frame = self.logoImageView.frame
+        frame.origin.y -= 200
+        UIView.animateWithDuration(2, animations: {
+            self.logoImageView.frame = frame
+        }) { (finished) in
+            if finished {
+                self.checkSignInStatus()
+            }
+        }
+    }
     
     private func setUIEnabled(enabled: Bool) {
         loginButton.enabled = enabled
@@ -70,6 +120,11 @@ extension LMTLoginViewController {
     }
     
     private func setupButton() {
-        loginButton.layer.cornerRadius = loginButton.frame.size.width / 2
+        loginButton.layer.cornerRadius = 5
+    }
+    
+    private func directToHomePage() {
+        let tabbarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        self.presentViewController(tabbarController, animated: true, completion: nil)
     }
 }

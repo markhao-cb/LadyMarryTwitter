@@ -8,16 +8,31 @@
 
 import UIKit
 import TwitterKit
+import STTwitter
 
 class LMTHomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var tweets = [TWTRTweet]()
+    var keyword: String?
+    private var tweets = [TWTRTweet]()
+    var currentTask: STTwitterRequestProtocol?
 
+    
+    //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTweetsByKeyword("Warriors")
         
+        if let keyword = keyword {
+            navigationItem.title = "Topic: \(keyword)"
+            getTweetsByKeyword(keyword)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let task = currentTask {
+            task.cancel()
+        }
     }
 }
 
@@ -25,13 +40,15 @@ class LMTHomeViewController: UIViewController {
 extension LMTHomeViewController {
     
     private func getTweetsByKeyword(keyword: String) {
-        TwitterClient.sharedInstance.postStatusesByKeyword(keyword) { (tweet, erorr) in
+        currentTask = TwitterClient.sharedInstance.postStatusesByKeyword(keyword) { (tweet, erorr) in
             if let tweet = tweet {
                 if !self.tweets.contains(tweet) {
                     self.tweets.insert(tweet, atIndex: 0)
                 }
-                performUIUpdatesOnMain({ 
+                performUIUpdatesOnMain({
+                    let currentContentSize = self.tableView.contentSize
                     self.tableView.reloadData()
+                    self.changeContentOffset(currentContentSize)
                 })
             }
         }
@@ -58,7 +75,16 @@ extension LMTHomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - Helper Methods
 extension LMTHomeViewController {
     
+    private func changeContentOffset(beforeContentSize: CGSize) {
+        if beforeContentSize.height > view.frame.height {
+            let afterContentSize = tableView.contentSize
+            let afterContentOffset = tableView.contentOffset
+            let newContentOffset = CGPointMake(afterContentOffset.x, afterContentOffset.y + afterContentSize.height - beforeContentSize.height)
+            tableView.contentOffset = newContentOffset
+        }
+    }
 }
 
