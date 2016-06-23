@@ -12,9 +12,12 @@
 		4DEB10A21D1BB81B00BC451C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A01D1BB81B00BC451C /* Main.storyboard */; };
 		4DEB10A41D1BB81B00BC451C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A31D1BB81B00BC451C /* Assets.xcassets */; };
 		4DEB10A71D1BB81B00BC451C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A51D1BB81B00BC451C /* LaunchScreen.storyboard */; };
+		55AA94640EC0AB48367E03D6 /* Pods_LadyMarryTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186A252233C233170F0C8BC7 /* Pods_LadyMarryTwitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186A252233C233170F0C8BC7 /* Pods_LadyMarryTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LadyMarryTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		220CEDE501BDD656BA4408C3 /* Pods-LadyMarryTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LadyMarryTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		4DEB10991D1BB81B00BC451C /* LadyMarryTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadyMarryTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DEB109E1D1BB81B00BC451C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		4DEB10A31D1BB81B00BC451C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DEB10A61D1BB81B00BC451C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DEB10A81D1BB81B00BC451C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66A15E877571908359A2ED6C /* Pods-LadyMarryTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LadyMarryTwitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AA94640EC0AB48367E03D6 /* Pods_LadyMarryTwitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				4DEB109B1D1BB81B00BC451C /* LadyMarryTwitter */,
 				4DEB109A1D1BB81B00BC451C /* Products */,
+				9509B06864D3F04BB0620D7B /* Pods */,
+				C2B8462C81ED39CEB0BBDC83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = LadyMarryTwitter;
 			sourceTree = "<group>";
 		};
+		9509B06864D3F04BB0620D7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66A15E877571908359A2ED6C /* Pods-LadyMarryTwitter.debug.xcconfig */,
+				220CEDE501BDD656BA4408C3 /* Pods-LadyMarryTwitter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2B8462C81ED39CEB0BBDC83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				186A252233C233170F0C8BC7 /* Pods_LadyMarryTwitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DEB10AB1D1BB81B00BC451C /* Build configuration list for PBXNativeTarget "LadyMarryTwitter" */;
 			buildPhases = (
+				A6F5A65DEC9B72CE64912D12 /* 📦 Check Pods Manifest.lock */,
 				4DEB10951D1BB81B00BC451C /* Sources */,
 				4DEB10961D1BB81B00BC451C /* Frameworks */,
 				4DEB10971D1BB81B00BC451C /* Resources */,
+				3FC70D8FAB2ED216CD316503 /* 📦 Embed Pods Frameworks */,
+				9C3844796EC649B8FF749E64 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FC70D8FAB2ED216CD316503 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C3844796EC649B8FF749E64 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F5A65DEC9B72CE64912D12 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DEB10951D1BB81B00BC451C /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		4DEB10AC1D1BB81B00BC451C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66A15E877571908359A2ED6C /* Pods-LadyMarryTwitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LadyMarryTwitter/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		4DEB10AD1D1BB81B00BC451C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 220CEDE501BDD656BA4408C3 /* Pods-LadyMarryTwitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LadyMarryTwitter/Info.plist;
@@ -286,6 +363,7 @@
 				4DEB10AD1D1BB81B00BC451C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
