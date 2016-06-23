@@ -12,17 +12,6 @@ class LMTHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    @IBAction func loginPressed(sender: UIButton) {
-        TwitterClient.sharedInstance.authenticateWithViewController(self) { (success, errorString) in
-            if success {
-                
-            } else {
-                print(errorString)
-            }
-        }
     }
 }
 

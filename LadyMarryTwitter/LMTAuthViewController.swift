@@ -14,7 +14,7 @@ class LMTAuthViewController: UIViewController {
     
     var urlRequest: NSURLRequest? = nil
     var requestToken: String? = nil
-    var completionHandlerForView: ((success: Bool, errorString: String?) -> Void)? = nil
+    var completionHandlerForView: ((success: Bool, errorString: String?, oauthToken: String?, oauthVerifier: String?) -> Void)? = nil
     
     // MARK: Outlets
     
@@ -43,7 +43,7 @@ class LMTAuthViewController: UIViewController {
     
     func cancelAuth() {
         dismissViewControllerAnimated(true, completion: {
-            self.completionHandlerForView!(success: false, errorString: "Sign in Canceled.")
+            self.completionHandlerForView!(success: false, errorString: "Sign in Canceled.", oauthToken: nil, oauthVerifier: nil)
         })
     }
 }
@@ -54,10 +54,15 @@ extension LMTAuthViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView) {
         
-        if webView.request!.URL!.absoluteString == TwitterClient.Constants.OAuthCallback {
-            
+        let urlString = webView.request!.URL!.absoluteString
+        let urlParts = urlString.componentsSeparatedByString("?")
+        let host = urlParts.first
+        let parameters = urlParts.last
+        let oauthToken = parameters?.componentsSeparatedByString("&").first?.componentsSeparatedByString("=").last
+        let oauthVerifier = parameters?.componentsSeparatedByString("&").last?.componentsSeparatedByString("=").last
+        if host == TwitterClient.Constants.OAuthCallback {
             dismissViewControllerAnimated(true) {
-                self.completionHandlerForView!(success: true, errorString: nil)
+                self.completionHandlerForView!(success: true, errorString: nil, oauthToken: oauthToken, oauthVerifier: oauthVerifier)
             }
         }
     }

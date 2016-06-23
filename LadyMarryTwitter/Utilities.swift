@@ -12,6 +12,10 @@ import JCAlertView
 
 struct Utilities {
     
+    static let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    static let session = NSURLSession.sharedSession()
+    static let userDefault = NSUserDefaults.standardUserDefaults()
+    
     //MARK: AlertViewType
     enum AlertViewType {
         case AlertViewWithOneButton

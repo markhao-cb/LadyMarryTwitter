@@ -15,6 +15,6 @@ extension TwitterClient {
         static let ConsumerSecret = "vVsJE3qjg4WGVn4fZLLVDq8psP9NmuS5JvzYHV2DjZ2bDCiyQN"
         static let AccessToken = "1401106634-MVEK1Sr15OkNMpWAwHRbYN4VImTgJFfJa6TuTbn"
         static let AccessTokenSecret = "Z9EY2XdOokQ5Yof5eRAhVV59SyrjWpYVTAFF4NILxcGB3"
-        static let OAuthCallback = "https://www.google.com"
+        static let OAuthCallback = "https://www.google.com/"
     }
 }
