@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D8AC1A81D1BBC1A00F8E0C5 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1A71D1BBC1A00F8E0C5 /* TwitterClient.swift */; };
+		4D8AC1AA1D1BBD8100F8E0C5 /* TwitterClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1A91D1BBD8100F8E0C5 /* TwitterClientConstants.swift */; };
+		4D8AC1AC1D1BC29A00F8E0C5 /* LMTAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1AB1D1BC29A00F8E0C5 /* LMTAuthViewController.swift */; };
+		4D8AC1AE1D1BC33C00F8E0C5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8AC1AD1D1BC33C00F8E0C5 /* Utilities.swift */; };
 		4DEB109D1D1BB81B00BC451C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */; };
-		4DEB109F1D1BB81B00BC451C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB109E1D1BB81B00BC451C /* ViewController.swift */; };
+		4DEB109F1D1BB81B00BC451C /* LMTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */; };
 		4DEB10A21D1BB81B00BC451C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A01D1BB81B00BC451C /* Main.storyboard */; };
 		4DEB10A41D1BB81B00BC451C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A31D1BB81B00BC451C /* Assets.xcassets */; };
 		4DEB10A71D1BB81B00BC451C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB10A51D1BB81B00BC451C /* LaunchScreen.storyboard */; };
@@ -18,9 +22,14 @@
 /* Begin PBXFileReference section */
 		186A252233C233170F0C8BC7 /* Pods_LadyMarryTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LadyMarryTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220CEDE501BDD656BA4408C3 /* Pods-LadyMarryTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LadyMarryTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-LadyMarryTwitter/Pods-LadyMarryTwitter.release.xcconfig"; sourceTree = "<group>"; };
+		4D8AC19E1D1BBB1500F8E0C5 /* LadyMarryTwitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LadyMarryTwitter-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D8AC1A71D1BBC1A00F8E0C5 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		4D8AC1A91D1BBD8100F8E0C5 /* TwitterClientConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientConstants.swift; sourceTree = "<group>"; };
+		4D8AC1AB1D1BC29A00F8E0C5 /* LMTAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMTAuthViewController.swift; sourceTree = "<group>"; };
+		4D8AC1AD1D1BC33C00F8E0C5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4DEB10991D1BB81B00BC451C /* LadyMarryTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadyMarryTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DEB109E1D1BB81B00BC451C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTHomeViewController.swift; sourceTree = "<group>"; };
 		4DEB10A11D1BB81B00BC451C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DEB10A31D1BB81B00BC451C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DEB10A61D1BB81B00BC451C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +49,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D8AC1A11D1BBB8100F8E0C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DEB109E1D1BB81B00BC451C /* LMTHomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4D8AC1A21D1BBB8A00F8E0C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D8AC1A51D1BBBCE00F8E0C5 /* Client */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4D8AC1A31D1BBB8F00F8E0C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4D8AC1A41D1BBB9A00F8E0C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */,
+				4DEB10A01D1BB81B00BC451C /* Main.storyboard */,
+				4DEB10A31D1BB81B00BC451C /* Assets.xcassets */,
+				4DEB10A51D1BB81B00BC451C /* LaunchScreen.storyboard */,
+				4DEB10A81D1BB81B00BC451C /* Info.plist */,
+				4D8AC19E1D1BBB1500F8E0C5 /* LadyMarryTwitter-Bridging-Header.h */,
+				4D8AC1AD1D1BC33C00F8E0C5 /* Utilities.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D8AC1A51D1BBBCE00F8E0C5 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				4D8AC1A61D1BBBDA00F8E0C5 /* Twitter */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		4D8AC1A61D1BBBDA00F8E0C5 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				4D8AC1AB1D1BC29A00F8E0C5 /* LMTAuthViewController.swift */,
+				4D8AC1A71D1BBC1A00F8E0C5 /* TwitterClient.swift */,
+				4D8AC1A91D1BBD8100F8E0C5 /* TwitterClientConstants.swift */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
 		4DEB10901D1BB81B00BC451C = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +125,10 @@
 		4DEB109B1D1BB81B00BC451C /* LadyMarryTwitter */ = {
 			isa = PBXGroup;
 			children = (
-				4DEB109C1D1BB81B00BC451C /* AppDelegate.swift */,
-				4DEB109E1D1BB81B00BC451C /* ViewController.swift */,
-				4DEB10A01D1BB81B00BC451C /* Main.storyboard */,
-				4DEB10A31D1BB81B00BC451C /* Assets.xcassets */,
-				4DEB10A51D1BB81B00BC451C /* LaunchScreen.storyboard */,
-				4DEB10A81D1BB81B00BC451C /* Info.plist */,
+				4D8AC1A31D1BBB8F00F8E0C5 /* View */,
+				4D8AC1A21D1BBB8A00F8E0C5 /* Model */,
+				4D8AC1A11D1BBB8100F8E0C5 /* Controller */,
+				4D8AC1A41D1BBB9A00F8E0C5 /* Supporting Files */,
 			);
 			path = LadyMarryTwitter;
 			sourceTree = "<group>";
@@ -210,7 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DEB109F1D1BB81B00BC451C /* ViewController.swift in Sources */,
+				4D8AC1AE1D1BC33C00F8E0C5 /* Utilities.swift in Sources */,
+				4DEB109F1D1BB81B00BC451C /* LMTHomeViewController.swift in Sources */,
+				4D8AC1A81D1BBC1A00F8E0C5 /* TwitterClient.swift in Sources */,
+				4D8AC1AA1D1BBD8100F8E0C5 /* TwitterClientConstants.swift in Sources */,
+				4D8AC1AC1D1BC29A00F8E0C5 /* LMTAuthViewController.swift in Sources */,
 				4DEB109D1D1BB81B00BC451C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,10 +391,13 @@
 			baseConfigurationReference = 66A15E877571908359A2ED6C /* Pods-LadyMarryTwitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LadyMarryTwitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markqhao.LadyMarryTwitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LadyMarryTwitter/LadyMarryTwitter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -337,10 +406,12 @@
 			baseConfigurationReference = 220CEDE501BDD656BA4408C3 /* Pods-LadyMarryTwitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LadyMarryTwitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markqhao.LadyMarryTwitter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LadyMarryTwitter/LadyMarryTwitter-Bridging-Header.h";
 			};
 			name = Release;
 		};

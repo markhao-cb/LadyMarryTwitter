@@ -4,15 +4,46 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JCAlertView 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>JCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Pods-LadyMarryTwitter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>STTwitter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6021795589D845797CB891318053A26E</key>
+		<key>76EADB63387502F09C28AB0816C1B652</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9F545FA8FAF6C317EDB56C898162FA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6AF542C0BD4B678F0B156D005629387</key>
 		<dict>
 			<key>primary</key>
 			<true/>
