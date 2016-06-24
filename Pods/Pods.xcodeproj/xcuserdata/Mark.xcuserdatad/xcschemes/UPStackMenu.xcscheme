@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6A1C68753EDCA01A604D7BC68D608016'
-               BlueprintName = 'STTwitter'
+               BlueprintIdentifier = '62CEFBD5A62D68315F98F13B59FFAF5B'
+               BlueprintName = 'UPStackMenu'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'STTwitter.framework'>
+               BuildableName = 'UPStackMenu.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

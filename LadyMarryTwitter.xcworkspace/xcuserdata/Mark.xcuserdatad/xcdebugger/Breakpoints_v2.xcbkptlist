@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LadyMarryTwitter/TwitterClient.swift"
-            timestampString = "488422209.869892"
+            timestampString = "488442406.476328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "postStatusesByKeyword(_:completionHandlerForPost:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LadyMarryTwitter/TwitterClient.swift"
-            timestampString = "488424389.68113"
+            timestampString = "488442406.476328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "postStatusesByKeyword(_:completionHandlerForPost:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LadyMarryTwitter.TwitterClient.(postStatusesByKeyword (Swift.String, completionHandlerForPost : (result : Swift.Optional&lt;__ObjC.TWTRTweet&gt;, erorr : Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; __ObjC.STTwitterRequestProtocol).(closure #1)"
+                  moduleName = "LadyMarryTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mark/Documents/Mark&apos;s%20iOS%20Applications/LadyMarryTwitter/LadyMarryTwitter/TwitterClient.swift"
+                  timestampString = "488438944.954162"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LadyMarryTwitter.TwitterClient.(postStatusesByKeyword (Swift.String, completionHandlerForPost : (result : Swift.Optional&lt;__ObjC.TWTRTweet&gt;, erorr : Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; __ObjC.STTwitterRequestProtocol).(closure #1)"
+                  moduleName = "LadyMarryTwitter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mark/Documents/Mark&apos;s%20iOS%20Applications/LadyMarryTwitter/LadyMarryTwitter/TwitterClient.swift"
+                  timestampString = "488438944.954339"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "1327">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LadyMarryTwitter/LMTHomeViewController.swift"
+            timestampString = "488441516.875356"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "getTweetsByKeyword(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LadyMarryTwitter/LMTHomeViewController.swift"
+            timestampString = "488442406.476328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "stackMenuWillOpen(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

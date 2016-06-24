@@ -17,6 +17,7 @@ struct Utilities {
     static let userDefault = NSUserDefaults.standardUserDefaults()
     
     static let twitterBlue = UIColor(red:0.33, green:0.67, blue:0.93, alpha:1.0)
+    static let backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     
     //MARK: AlertViewType
     enum AlertViewType {

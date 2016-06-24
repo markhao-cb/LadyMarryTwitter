@@ -13,4 +13,5 @@ target 'LadyMarryTwitter' do
   pod 'Fabric'
   pod 'TwitterKit'
   pod 'TwitterCore'
+  pod 'UPStackMenu'
 end

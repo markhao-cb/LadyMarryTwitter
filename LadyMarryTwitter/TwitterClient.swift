@@ -12,6 +12,11 @@ import TwitterKit
 
 class TwitterClient {
     
+    enum TweetType {
+        case TextOnly
+        case Media
+    }
+    
     // authentication state
     var oauthToken: String? = nil
     var oauthTokenSecret: String? = nil
@@ -89,22 +94,19 @@ class TwitterClient {
 
 extension TwitterClient {
     
-    func postStatusesByKeyword(keyword: String, completionHandlerForPost:(result: TWTRTweet?, erorr: String? ) -> Void) -> STTwitterRequestProtocol {
+    func postStatusesByKeyword(keyword: String, completionHandlerForPost:(result: TWTRTweet?, type: TweetType?,  erorr: String? ) -> Void) -> STTwitterRequestProtocol {
         
         let request = sttwitter.postStatusesFilterKeyword(keyword, tweetBlock: { tweetDic in
-            let tweet = TWTRTweet.init(JSONDictionary: tweetDic)
             
-            if let entities = tweetDic["entities"] as? [NSObject: AnyObject], media = entities["media"] as? NSArray {
-                
-                print(media)
-                print(media[0])
+            let tweet = TWTRTweet.init(JSONDictionary: tweetDic)
+            if let entities = tweetDic["entities"] as? [NSObject: AnyObject], _ = entities["media"] as? NSArray {
+                completionHandlerForPost(result: tweet, type: .Media, erorr: nil)
+            } else {
+                completionHandlerForPost(result: tweet, type: .TextOnly, erorr: nil)
             }
             
-            print("******************************************\n\(tweetDic)")
-            completionHandlerForPost(result: tweet, erorr: nil)
-            
         }) { (error) in
-            completionHandlerForPost(result: nil, erorr: error.localizedDescription)
+            completionHandlerForPost(result: nil, type: nil, erorr: error.localizedDescription)
         }
         return request
     }

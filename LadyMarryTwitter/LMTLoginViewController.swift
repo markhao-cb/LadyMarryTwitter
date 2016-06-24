@@ -58,7 +58,7 @@ extension LMTLoginViewController {
         sttwitter?.verifyCredentialsWithUserSuccessBlock({ (userName, userID) in
             performUIUpdatesOnMain({
                 progressHUD.hide()
-                self.changeTextForLabel(self.backLabel, text: "Welcome Back, \(userName)!")
+                self.changeTextForLabel(self.backLabel, text: "Welcome back, \(userName)!")
                 UIView.animateWithDuration(0.5, animations: {
                     self.backLabel.alpha = 1
                     }, completion: { (finished) in

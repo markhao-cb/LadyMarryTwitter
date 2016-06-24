@@ -1,0 +1,6 @@
+framework module UPStackMenu {
+  umbrella header "UPStackMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}
