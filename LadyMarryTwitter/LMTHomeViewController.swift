@@ -12,11 +12,12 @@ import STTwitter
 
 class LMTHomeViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    
     var keyword: String?
+    @IBOutlet private weak var tableView: UITableView!
     private var tweets = [TWTRTweet]()
-    var currentTask: STTwitterRequestProtocol?
-
+    private var currentTask: STTwitterRequestProtocol?
+    private var progressHUD : ProgressHUD?
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -24,7 +25,11 @@ class LMTHomeViewController: UIViewController {
         
         if let keyword = keyword {
             navigationItem.title = "Topic: \(keyword)"
+            progressHUD = ProgressHUD(text: "Fetching...")
             getTweetsByKeyword(keyword)
+            delay(10, closure: {
+                self.progressHUD!.hide()
+            })
         }
     }
     
@@ -40,6 +45,10 @@ class LMTHomeViewController: UIViewController {
 extension LMTHomeViewController {
     
     private func getTweetsByKeyword(keyword: String) {
+        
+        view.addSubview(progressHUD!)
+        progressHUD!.show()
+        
         currentTask = TwitterClient.sharedInstance.postStatusesByKeyword(keyword) { (tweet, erorr) in
             if let tweet = tweet {
                 if !self.tweets.contains(tweet) {
@@ -48,7 +57,10 @@ extension LMTHomeViewController {
                 performUIUpdatesOnMain({
                     let currentContentSize = self.tableView.contentSize
                     self.tableView.reloadData()
-                    self.changeContentOffset(currentContentSize)
+                    if currentContentSize.height > self.view.frame.height {
+                        self.progressHUD!.hide()
+                        self.changeContentOffset(currentContentSize)
+                    }
                 })
             }
         }
@@ -79,12 +91,10 @@ extension LMTHomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension LMTHomeViewController {
     
     private func changeContentOffset(beforeContentSize: CGSize) {
-        if beforeContentSize.height > view.frame.height {
-            let afterContentSize = tableView.contentSize
-            let afterContentOffset = tableView.contentOffset
-            let newContentOffset = CGPointMake(afterContentOffset.x, afterContentOffset.y + afterContentSize.height - beforeContentSize.height)
-            tableView.contentOffset = newContentOffset
-        }
+        let afterContentSize = tableView.contentSize
+        let afterContentOffset = tableView.contentOffset
+        let newContentOffset = CGPointMake(afterContentOffset.x, afterContentOffset.y + afterContentSize.height - beforeContentSize.height)
+        tableView.contentOffset = newContentOffset
     }
 }
 

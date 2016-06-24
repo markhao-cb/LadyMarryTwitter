@@ -90,9 +90,19 @@ class TwitterClient {
 extension TwitterClient {
     
     func postStatusesByKeyword(keyword: String, completionHandlerForPost:(result: TWTRTweet?, erorr: String? ) -> Void) -> STTwitterRequestProtocol {
+        
         let request = sttwitter.postStatusesFilterKeyword(keyword, tweetBlock: { tweetDic in
             let tweet = TWTRTweet.init(JSONDictionary: tweetDic)
+            
+            if let entities = tweetDic["entities"] as? [NSObject: AnyObject], media = entities["media"] as? NSArray {
+                
+                print(media)
+                print(media[0])
+            }
+            
+            print("******************************************\n\(tweetDic)")
             completionHandlerForPost(result: tweet, erorr: nil)
+            
         }) { (error) in
             completionHandlerForPost(result: nil, erorr: error.localizedDescription)
         }
