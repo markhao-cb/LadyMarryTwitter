@@ -162,17 +162,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aat-U3-IaG">
-                                <rect key="frame" x="239" y="450" width="122" height="36"/>
-                                <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <state key="normal" title="  Get Tweets!  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Jpx-tc-uAg" kind="show" id="N6V-HJ-zsV"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a Topic" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-bK-YL2">
                                 <rect key="frame" x="20" y="282" width="560" height="35"/>
                                 <constraints>
@@ -184,6 +173,17 @@
                                     <outlet property="delegate" destination="3cC-UV-z6Z" id="JeV-ab-Ui8"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aat-U3-IaG">
+                                <rect key="frame" x="239" y="499" width="122" height="36"/>
+                                <color key="backgroundColor" red="0.27622912820000001" green="0.72483606280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="  Get Tweets!  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jpx-tc-uAg" kind="show" id="N6V-HJ-zsV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

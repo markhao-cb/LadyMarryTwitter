@@ -74,28 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LadyMarryTwitter/LMTHomeViewController.swift"
-            timestampString = "488441516.875356"
+            timestampString = "488471450.90827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "getTweetsByKeyword(_:)"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "stackMenuWillOpen(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LadyMarryTwitter/LMTHomeViewController.swift"
-            timestampString = "488442406.476328"
+            timestampString = "488471504.31699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "stackMenuWillOpen(_:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "getTweetsByKeyword(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

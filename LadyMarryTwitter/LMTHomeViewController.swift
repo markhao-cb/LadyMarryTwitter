@@ -42,6 +42,11 @@ class LMTHomeViewController: UIViewController {
             getTweetsByKeyword(keyword)
             delay(10, closure: {
                 self.progressHUD!.hide()
+                if self.allTweets.count == 0 {
+                    showAlertViewWith("Oops", error: "No Available Tweets. Please Try Again", type: .AlertViewWithOneButton, firstButtonTitle: "OK", firstButtonHandler: { 
+                        self.navigationController?.popViewControllerAnimated(true)
+                        }, secondButtonTitle: nil, secondButtonHandler: nil)
+                }
             })
         }
         
@@ -53,6 +58,7 @@ class LMTHomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         if let task = currentTask {
             task.cancel()
+            Utilities.appDelegate.setNewworkActivityIndicatorVisible(false)
         }
     }
     
@@ -61,6 +67,7 @@ class LMTHomeViewController: UIViewController {
     @IBAction func stopOrStartStreaming(sender: UIBarButtonItem) {
         if isStreaming {
             currentTask?.cancel()
+            Utilities.appDelegate.setNewworkActivityIndicatorVisible(false)
             let button = UIBarButtonItem(barButtonSystemItem: .Play, target: self, action: #selector(stopOrStartStreaming))
             navigationItem.rightBarButtonItem = button
             isStreaming = false
@@ -81,6 +88,7 @@ extension LMTHomeViewController {
         view.addSubview(progressHUD!)
         progressHUD!.show()
         
+        Utilities.appDelegate.setNewworkActivityIndicatorVisible(true)
         currentTask = TwitterClient.sharedInstance.postStatusesByKeyword(keyword) { (tweet, type, erorr) in
             if let tweet = tweet {
                 if !self.allTweets.contains(tweet) {

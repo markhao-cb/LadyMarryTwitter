@@ -17,6 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var sttwitter : STTwitterAPI?
+    lazy var NumberOfCallsToSetVisible = 0
+    
+    func setNewworkActivityIndicatorVisible(setVisible: Bool) {
+        if setVisible {
+            NumberOfCallsToSetVisible += 1
+        } else {
+            NumberOfCallsToSetVisible -= 1
+        }
+        
+        guard (NumberOfCallsToSetVisible >= 0) else {
+            print("Network Activity Indicator was asked to hide more often than shown")
+            return
+        }
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = (NumberOfCallsToSetVisible > 0)
+        
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

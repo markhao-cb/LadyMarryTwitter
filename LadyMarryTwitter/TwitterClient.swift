@@ -96,7 +96,7 @@ extension TwitterClient {
     
     func postStatusesByKeyword(keyword: String, completionHandlerForPost:(result: TWTRTweet?, type: TweetType?,  erorr: String? ) -> Void) -> STTwitterRequestProtocol {
         
-        let request = sttwitter.postStatusesFilterKeyword(keyword, tweetBlock: { tweetDic in
+        let request = sttwitter.postStatusesFilterKeyword(keyword.lowercaseString, tweetBlock: { tweetDic in
             
             let tweet = TWTRTweet.init(JSONDictionary: tweetDic)
             if let entities = tweetDic["entities"] as? [NSObject: AnyObject], _ = entities["media"] as? NSArray {
