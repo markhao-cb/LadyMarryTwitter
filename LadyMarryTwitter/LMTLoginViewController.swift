@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Canvas
 
 class LMTLoginViewController: UIViewController {
     

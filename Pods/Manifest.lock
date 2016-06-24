@@ -1,5 +1,4 @@
 PODS:
-  - Canvas (0.1.2)
   - Fabric (1.6.7)
   - JCAlertView (1.1.5)
   - STTwitter (0.2.4)
@@ -10,7 +9,6 @@ PODS:
   - UPStackMenu (1.0.0)
 
 DEPENDENCIES:
-  - Canvas
   - Fabric
   - JCAlertView
   - STTwitter
@@ -19,7 +17,6 @@ DEPENDENCIES:
   - UPStackMenu
 
 SPEC CHECKSUMS:
-  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
   STTwitter: a82de278afbd4191d0a07f4f3ffd8f1fb8404da0
@@ -27,6 +24,6 @@ SPEC CHECKSUMS:
   TwitterKit: 2c64ec342a6261ae6bab565bad85dcbbfd3888b7
   UPStackMenu: 4e834206f76451c1d78a6cacee46e47ecf83b174
 
-PODFILE CHECKSUM: f2c5bc6a61f5f566c7b5c07dd7daaef4febfd086
+PODFILE CHECKSUM: a4bdeb6680498111a3e1198efe1e96a52ea7dc05
 
 COCOAPODS: 1.0.0

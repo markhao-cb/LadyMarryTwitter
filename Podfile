@@ -9,7 +9,6 @@ target 'LadyMarryTwitter' do
   
   pod 'STTwitter'
   pod 'JCAlertView'
-  pod 'Canvas'
   pod 'Fabric'
   pod 'TwitterKit'
   pod 'TwitterCore'
