@@ -124,7 +124,7 @@ extension LMTLoginViewController {
     }
     
     private func directToHomePage() {
-        let tabbarController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-        self.presentViewController(tabbarController, animated: true, completion: nil)
+        let navigationController = self.storyboard?.instantiateViewControllerWithIdentifier("NavigationController") as! UINavigationController
+        self.presentViewController(navigationController, animated: true, completion: nil)
     }
 }

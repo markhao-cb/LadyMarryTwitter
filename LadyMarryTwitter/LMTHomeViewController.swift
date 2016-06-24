@@ -12,12 +12,13 @@ import STTwitter
 
 class LMTHomeViewController: UIViewController {
     
-    
+    //MARK: Properties
     var keyword: String?
     @IBOutlet private weak var tableView: UITableView!
     private var tweets = [TWTRTweet]()
     private var currentTask: STTwitterRequestProtocol?
     private var progressHUD : ProgressHUD?
+    private var isStreaming: Bool = true
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -37,6 +38,22 @@ class LMTHomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         if let task = currentTask {
             task.cancel()
+        }
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func stopOrStartStreaming(sender: UIBarButtonItem) {
+        if isStreaming {
+            currentTask?.cancel()
+            let button = UIBarButtonItem(barButtonSystemItem: .Play, target: self, action: #selector(stopOrStartStreaming))
+            navigationItem.rightBarButtonItem = button
+            isStreaming = false
+        } else {
+            getTweetsByKeyword(keyword!)
+            isStreaming = true
+            let button = UIBarButtonItem(barButtonSystemItem: .Pause, target: self, action: #selector(stopOrStartStreaming))
+            navigationItem.rightBarButtonItem = button
         }
     }
 }
